@@ -107,6 +107,9 @@ div.slide-section {
     div.slide-section div.container:last-child {
       margin-right: 0; }
     div.slide-section div.container h1 {
+      max-width: 75em;
+      margin-left: auto;
+      margin-right: auto;
       float: left;
       display: block;
       margin-right: 2.3255813953%;
@@ -116,6 +119,10 @@ div.slide-section {
       color: #fff;
       text-align: center;
       margin: 20% 0 0 0; }
+      div.slide-section div.container h1::after {
+        clear: both;
+        content: "";
+        display: table; }
       div.slide-section div.container h1:last-child {
         margin-right: 0; }
     div.slide-section div.container h2 {
@@ -496,6 +503,42 @@ section.cat_container article.proj_item {
           color: #fff;
           list-style: none;
           font-size: 1.25em; }
+
+div.who {
+  height: 900px; }
+  div.who div.container-who {
+    max-width: 75em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 0 0 0; }
+    div.who div.container-who::after {
+      clear: both;
+      content: "";
+      display: table; }
+    div.who div.container-who section.headshot {
+      /*background-color: #b2b2b2;*/
+      background: url(../images/headshot.jpeg) -50px 0px;
+      background-size: 400px;
+      width: 300px;
+      height: 300px;
+      border-radius: 150px;
+      margin: 0 auto; }
+    div.who div.container-who section.bio h1 {
+      padding-bottom: 0px;
+      font-size: 3em; }
+    div.who div.container-who section.bio h2.profile-title {
+      padding-top: 10px; }
+    div.who div.container-who section.bio div.bio-text {
+      float: left;
+      display: block;
+      margin-right: 2.3255813953%;
+      width: 82.9457364341%;
+      text-align: center;
+      font-family: "Frutiger LT W04_45 Light";
+      margin: 0 auto;
+      padding-left: 20%; }
+      div.who div.container-who section.bio div.bio-text:last-child {
+        margin-right: 0; }
 
 footer {
   position: relative;

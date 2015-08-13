@@ -67,6 +67,7 @@ html, body {
     }
 }
 
+
 /*----------------- HOME PAGE -----------*/
 
 
@@ -80,6 +81,7 @@ div.slide-section {
 	div.container {
 		@include span-columns(12);
 		h1 {
+			@include outer-container;
 			@include span-columns(12);
 			font-size: 3em;
 			font-family: $frutigerRoman;
@@ -428,6 +430,40 @@ section.cat_container {
         }
     }
 }
+
+div.who {
+	height: 900px;
+	div.container-who {
+		@include outer-container;
+		padding: 100px 0 0 0;
+		section.headshot {
+			/*background-color: #b2b2b2;*/
+			background: url(../images/headshot.jpeg) -50px 0px;
+			background-size: 400px;
+			width: 300px;
+			height: 300px;
+			border-radius: 150px;
+			margin: 0 auto;
+		}
+		section.bio {
+			h1 {
+				padding-bottom: 0px;
+				font-size: 3em;
+			}
+			h2.profile-title {
+				padding-top:10px;
+			}
+			div.bio-text {
+				@include span-columns(10);
+				text-align: center;
+				font-family: $frutigerLight; 
+				margin: 0 auto;
+				padding-left: 20%;
+			}
+		}
+	}
+}
+
 footer {
     position: relative;
     margin-bottom: $nav_height;

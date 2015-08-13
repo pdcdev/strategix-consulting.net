@@ -62,6 +62,19 @@
 
 <div class="who">
 	<div class="container-who">
+		<section class="headshot">
+
+		</section>
+		<section class="bio">
+			<h1>Vincent Salvatoriello</h1>
+			<h2 class="profile-title">President + CEO</h2>
+			<div class="bio-text">
+				<p>Nunc et varius justo. Aenean eu ipsum cursus, tincidunt ex in, sollicitudin.
+				</p>
+				<p>In urna massa, blandit in metus a, commodo condimentum ante. Donec lacinia diam nisi, vestibulum ullamcorper sapien fringilla a. Etiam vel velit aliquam massa efficitur consequat. In condimentum nisl sit amet scelerisque varius. Vivamus mi ipsum, euismod vel finibus vitae, pulvinar id metus. Etiam at lorem condimentum, accumsan quam ac, vestibulum risus. Fusce, risus rutrum rutrum condimentum, turpis augue facilisis ante, a tortor tellus non massa. 
+				</p>
+			</div>
+		</section>
 	</div>
 </div>
 

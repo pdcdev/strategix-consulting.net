@@ -87,7 +87,7 @@ div.slide-section {
 			font-family: $frutigerRoman;
 			color: #fff;
 			text-align: center;
-			margin: 20% 0 0 0;
+			margin: 30% 0 0 0;
 		}
 		h2 {
 			@include span-columns(12);
@@ -101,37 +101,39 @@ div.slide-section {
 }
 
 
+/* header.headroom, header.headroom--unpinned, header.headroom--pinned {*/
 header {
     z-index: 999;
     position: fixed;
-    bottom: 0;
+    top: 0;
     width: 100%;
     background-color: #fff;
+    transition: top 0.2s ease-in-out;
     div.menu {
         @include outer-container;
-        height: 70px;
+        height: 80px;
     	}
     div#nav {
     	div.logo {
     		@include span-columns(3);
-    		margin: 22px 0 0 30px;
+    		margin: 28px 0 0 30px;
     		width: 150px;
     		display: inline-block;
 
     	}
         ul.navigation {
         	@include span-columns(5);
-            margin: 8px 30px 0 30px;
+            margin: 10px 30px 0 30px;
             display: inline-block;
             @include shift(4);
             @include media($tablet) {
                 @include span-columns(6);
-                
-                
+                display: none;
+                    
             }
             @include media($mobile) {
                 @include span-columns(3);
-                
+                display: none;
                 
             }
             list-style: none;
@@ -174,8 +176,6 @@ header {
         }
     }  
 }
-    
-    
 
 
 
@@ -188,78 +188,59 @@ div.about {
 	padding-bottom: 100px;
 	overflow: hidden;
 	background-color: #fff;
+
 	div.container-about {
 		section.about, section.profile, section.market, section.services, section.contact {
-			padding-bottom: 100px;
-			height: auto;
-			h2 {
-				font-family: 1em;
-
-			}
-			article.about-info {
-				@include span-columns(12);
-		        p.left{
-		        	@include span-columns(6);
-		            color: #444;
-		            padding-bottom: 30px;
-		            text-align: left;
-		            vertical-align: top;
-		            font-family: $frutigerLight;
-			        }
-
-		            @include media($tablet) {
-		                text-align: left;
-		            }
+		padding-bottom: 100px;
+		height: auto;
+		h2 {
+			font-family: 1em;
+		}
+		article.about-info {
+			@include span-columns(12);
+            @include media($mobile) {
+                @include span-columns(3);
+            }/*------------------- help ------*/
+	        p.left{
+	        	@include span-columns(6);
+	            color: #444;
+	            padding-bottom: 30px;
+	            text-align: left;
+	            vertical-align: top;
+	            font-family: $frutigerLight;
 		        }
-		        p.right {
-		        	@include span-columns(6);
-		        	color: #444;
-		            padding-bottom: 30px;
-		            text-align: left;
-		            vertical-align: top;
-		            font-family: $frutigerLight;
-		        }
-		    }
+
+	            @include media($tablet) {
+	                text-align: left;
+	            }
+	        }
+	        p.right {
+	        	@include span-columns(6);
+	        	color: #444;
+	            padding-bottom: 30px;
+	            text-align: left;
+	            vertical-align: top;
+	            font-family: $frutigerLight;
+	        }
 		}
 	}
+}
 
 
 section.services {
     article {
+
         h2 {
             font-size: 2rem;
             font-family: $frutigerLight;
             font-weight: normal;
             display: block;
-            text-align: center;
+            text-align: left;
         }
         p {
             @include pad(0 0 1em 0);
         }
     }
-}
-
-div.who {
-	width: 100%;
-	height: 800px;
-	overflow: hidden;
-	background-color: #fff;
-	border-top:4px solid $red;
-}
-
-div.projects {
-	width: 100%;
-	height: 800px;
-	overflow: hidden;
-	background-color: #fff;
-	border-top:4px solid $red;
-}
-
-div.contact {
-	width: 100%;
-	height: 800px;
-	background-color: #fff;
-	border-top:4px solid $red;
 }
 
 
@@ -273,18 +254,21 @@ section {
         color: $red;
         font-size: 2em;
         @include pad(2em 0);
-        text-align: center;
+        text-align: left;
         font-weight: normal;
     }
     article {
         dl {
-            @include span-columns(4);
-        }
-        dl {
         	@include span-columns(3);
+                @include media($tablet) {
+                @include span-columns(3);
+                padding-bottom: 30px;
+                @include media($mobile) {
+                    @include span-columns(3);
+                }
+            }
             dt {
-
-                @include pad(0 0 .4rem 0);
+                margin-bottom: 10px;
                 font-family: $frutigerLight;
                 font-size: 1.5rem;
                 
@@ -301,168 +285,280 @@ section {
     }
 }
 
-section.cat_container {
-    article.proj_item {
-        position: relative;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        &.resi {
-            background-image: url('../images/residential.jpg');
+div.case-studies {
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background-color: #fff;
+    border-top:4px solid $red;
+    div.container-projects {
+        @include outer-container;
+        padding: 100px 0 0 0;
+        @include outer-container;
+
+    }
+
+}
+
+div.who {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    border-top:4px solid $red;
+	height: 900px;
+    @include media($tablet) {
+        height: auto;
+    }
+    @include media($mobile) {
+
+    }
+	div.container-who {
+		@include outer-container;
+
+		padding: 200px 0 100px 0;
+        @include media($mobile) {
+            padding: 0 0 50px 0;
         }
-        &.phar {
-            background-image: url('../images/pharm.jpg');
-        }
-        &.tran {
-            background-image: url('../images/transportation.jpg');
-        }
-        &.scie {
-            background-image: url('../images/science.jpg');
-        }
-        &.corp {
-            background-image: url('../images/corporate.jpg');
-        }
-        &.heal {
-            background-image: url('../images/healthcare.jpg');
-        }
-        &.high {
-            background-image: url('../images/highered.jpg');
-        }
-        div.inner_container {
-            @include outer-container;
-            background-color: rgba(lime, .5);
-            position: relative;
-            div.case_description {
-                @include span-columns(6);
+        div.left {
+            @include span-columns(6);
+            @extend .global_pad;
+            section.headshot {
+            @include span-columns(3);
+            background-color: #eee;
+            /*background: url(../images/headshot.jpeg) 0px 0px;*/
+            background-size: 400px;
+            width: 400px;
+            height: 400px;
+            border-radius: 200px;
+            margin: 0 auto;
                 @include media($tablet) {
-                    @include pad(2rem 0);
-                    @include span-columns(6);
+                    
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 150px;
+                    margin: 0 auto;
                 }
-                h3 {
-                    text-align: left;
-                    font-family: $frutigerLight;
-                    color: #fff;
-                    @include pad(0 0 1rem 0);
-                    font-size: 2rem;
-                    font-weight: normal;
-                }
-                div {
-                    div.highlight {
-                        font-size: 1.4rem;
-                        @include pad(0 0 1rem 0);
-                    }
-                    div.copy {
-                        font-size: 1rem;
-                    }
-                    p {
-                        color: #fff;
-                        font-family: $frutigerLight;
-                    }
+                @include media($mobile) {
+
+                    display: block;
+                    width: 250px;
+                    height: 250px;
+                    border-radius: 125px;
+                    margin: 0 auto;
                 }
             }
-            div.case_info {
-                color: #fff;
+        }
+        div.right {
+            @include span-columns(6);
+
+            @extend .global_pad;
+            section.bio {
+                h3.bio {
+                    display: block;
+                    text-align: left;
+                    padding: 0px 0px 30px 0px;
+                    font-size: 2em;
+                    
+                }
+                h3.profile-title {
+                    display: block;
+                    padding: 0px 0px 30px 0px;
+                    text-align: left;
+                    
+                }
+                div.bio-text {
+                    display: block;
+                    text-align: left;
+                    font-family: $frutigerLight; 
+                }
+            }
+            @include media($mobile) {
+                @include span-columns(3);
+            }
+		}
+	}
+}
+
+div.slide-section-case1 {
+    background: url(../images/corporate.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: #fff;
+    
+    h1{
+        font-size: 20pt;
+        padding-bottom:10px; 
+        }
+    div {
+        @include outer-container;
+        div.container-case1 {
+           
+            @include span-columns(12);
+            padding: 200px 30px 0 30px;
+            z-index: 99;
+            
+            div.left {
                 @include span-columns(6);
+                h1 {
+                    font-size: 2em;
+                    padding: 0 0 30px 0;
+                }
                 @include media($tablet) {
-                    @include span-columns(6);
+                    @include span-columns(5);
                 }
-                div.case_vitals, div.services_list {
-                    @include pad(3rem 0 0 0);
-                    &:before {
-                        position: absolute;
-                        margin-top: -3rem;
-                        content:"";
-                        width: 20px;
-                        height: 3px;
-                        background-color: #fff;
-                    }
+                @include media($mobile) {
+                    @include span-columns(3);
+                    font-size: 1em;
+                    padding: 0 0 30px 0;
                 }
-                div.case_vitals {
-                    @include span-columns(5 of 6);
-                    @include shift(1);
-                    @include media($tablet) {
-                        @include span-columns(6 of 6);
-                        @include shift(0);
-                    }
-                    div {
-                        height: 100px;
-                        @include clearfix;
-                        p, span {
-                            font-family: $frutigerLight;
-                            font-size: 1.25rem;
-                            color: #fff;
-                        }
-                        span.large {
-                            font-size: 2rem;
-                        }
-                        @include span-columns(2 of 5);
-                        @include media($tablet) {
-                            @include span-columns(3 of 6);
-                            @include omega(2n);
-                        }
-                                
-                    }
+            }
+            div.right {
+                @include span-columns(6);
+                padding: 65px 0 0 0;
+                @include media($tablet) {
+                    @include span-columns(5);
                 }
-                div.services_list {
-                    @include clearfix;
-                    @include span-columns(5 of 6);
-                    @include shift(1);
-                    @include media($tablet) {
+                @include media($mobile) {
+                    @include span-columns(5);
+                }
+            div.details {
+                padding: 0 0 30px 30px;
+            }
+                div.top {
+                    
+                    @include span-columns(12);
+                    div.sector {
                         @include span-columns(6);
-                        @include shift(0);
+                        
+
                     }
-                    p {
-                        color: $red;
-                        font-size: 1.25em;
-                        font-family: $frutigerLight;
-                        color: #fff;
+                    div.location {
+                        @include span-columns(6);
                     }
-                    ol {
-                        li {
-                            font-family: $frutigerLight;
-                            color: #fff;
-                            list-style: none;
-                            font-size: 1.25em;
-                        }
+                }
+                div.middle {
+                    @include span-columns(12);
+                    div.size {
+                        @include span-columns(6);
                     }
-                }                
+                    div.sociis {
+                        @include span-columns(6);
+                    }
+                }
+                div.bottom {
+                    @include span-columns(12);
+                    div.services {
+                        @include span-columns(10);
+                    }
+                }
             }
         }
     }
 }
 
-div.who {
-	height: 900px;
-	div.container-who {
-		@include outer-container;
-		padding: 100px 0 0 0;
-		section.headshot {
-			/*background-color: #b2b2b2;*/
-			background: url(../images/headshot.jpeg) -50px 0px;
-			background-size: 400px;
-			width: 300px;
-			height: 300px;
-			border-radius: 150px;
-			margin: 0 auto;
-		}
-		section.bio {
-			h1 {
-				padding-bottom: 0px;
-				font-size: 3em;
-			}
-			h2.profile-title {
-				padding-top:10px;
-			}
-			div.bio-text {
-				@include span-columns(10);
-				text-align: center;
-				font-family: $frutigerLight; 
-				margin: 0 auto;
-				padding-left: 20%;
-			}
-		}
-	}
+div.slide-section-case2 {
+    background: url(../images/transportation.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: #fff;
+    h1{
+        font-size: 20pt;
+        padding-bottom:10px; 
+        }
+    div {
+        @include outer-container;
+        div.container-case2 {
+           
+            @include span-columns(12);
+            padding: 200px 30px 0 30px;
+            z-index: 99;
+            
+            div.left {
+                @include span-columns(6);
+                @include media($tablet) {
+                    @include span-columns(5);
+                }
+                @include media($mobile) {
+                    @include span-columns(3);
+                }
+                h1 {
+                    font-size: 2em;
+                    padding: 0 0 30px 0;
+                }
+            }
+            div.right {
+                @include span-columns(6);
+                @include media($tablet) {
+                    @include span-columns(5);
+                }
+                @include media($mobile) {
+                    @include span-columns(5);
+                }
+                padding: 65px 0 0 0;
+            div.details {
+                padding: 0 0 30px 30px;
+            }
+                div.top {
+                    
+                    @include span-columns(12);
+                    div.sector {
+                        @include span-columns(6);
+                        
+
+                    }
+                    div.location {
+                        @include span-columns(6);
+                    }
+                }
+                div.middle {
+                    @include span-columns(12);
+                    div.size {
+                        @include span-columns(6);
+                    }
+                    div.sociis {
+                        @include span-columns(6);
+                    }
+                }
+                div.bottom {
+                    @include span-columns(12);
+                    div.services {
+                        @include span-columns(10);
+                    }
+                }
+            }
+        }
+    }
 }
+
+div.contact { 
+    width: 100%;
+    height: 500px;
+    background-color: #eee;
+    border-top:4px solid $red;
+    div.container-contact {
+        @include outer-container;
+        padding: 100px 30px 0 30px;
+        
+        div.office1 {
+            @include span-columns(12);
+            ul.contact-block {
+                @include span-columns(6);
+                li {
+                    font-family: $frutigerLight; 
+                    line-height: 30px;
+                    color: #b2b2b2;
+                }
+            }
+        }
+    }
+}
+
 
 footer {
     position: relative;
